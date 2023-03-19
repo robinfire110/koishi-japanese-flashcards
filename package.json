@@ -1,0 +1,1525 @@
+{
+  "name": "japanese-flashcards",
+  "author": "robinfire110",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Koishi - Japanese Kana Flashcards",
+    "uuid": "5ea0fc3e-cb36-4114-8f66-d15a4b83b148",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk",
+      "diorite"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "resources": {
+      "media": [
+        {
+          "menuIcon": true,
+          "type": "png",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/menu_icon.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TICK_BLACK",
+          "file": "images/tick_black.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TICK_WHITE",
+          "file": "images/tick_white.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CONFIRM",
+          "file": "images/confirm.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "CROSS",
+          "file": "images/cross.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "TICK",
+          "file": "images/tick.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "WARNING",
+          "file": "images/warning.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_FORWARD",
+          "file": "images/icon_forward.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_BACK",
+          "file": "images/icon_back.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_CENTER",
+          "file": "images/icon_center.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_RESTART",
+          "file": "images/icon_restart.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_A",
+          "file": "images/kana_icons/icon_h_a.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_KA",
+          "file": "images/kana_icons/icon_h_ka.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_GA",
+          "file": "images/kana_icons/icon_h_ga.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_SA",
+          "file": "images/kana_icons/icon_h_sa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_ZA",
+          "file": "images/kana_icons/icon_h_za.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_TA",
+          "file": "images/kana_icons/icon_h_ta.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_DA",
+          "file": "images/kana_icons/icon_h_da.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_NA",
+          "file": "images/kana_icons/icon_h_na.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_HA",
+          "file": "images/kana_icons/icon_h_ha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_BA",
+          "file": "images/kana_icons/icon_h_ba.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_PA",
+          "file": "images/kana_icons/icon_h_pa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_MA",
+          "file": "images/kana_icons/icon_h_ma.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_YA",
+          "file": "images/kana_icons/icon_h_ya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_RA",
+          "file": "images/kana_icons/icon_h_ra.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_WA",
+          "file": "images/kana_icons/icon_h_wa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_H_COMBO",
+          "file": "images/kana_icons/icon_h_combo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_A",
+          "file": "images/kana_icons/icon_k_a.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_KA",
+          "file": "images/kana_icons/icon_k_ka.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_GA",
+          "file": "images/kana_icons/icon_k_ga.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_SA",
+          "file": "images/kana_icons/icon_k_sa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_ZA",
+          "file": "images/kana_icons/icon_k_za.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_TA",
+          "file": "images/kana_icons/icon_k_ta.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_DA",
+          "file": "images/kana_icons/icon_k_da.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_NA",
+          "file": "images/kana_icons/icon_k_na.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_HA",
+          "file": "images/kana_icons/icon_k_ha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_BA",
+          "file": "images/kana_icons/icon_k_ba.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_PA",
+          "file": "images/kana_icons/icon_k_pa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_MA",
+          "file": "images/kana_icons/icon_k_ma.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_YA",
+          "file": "images/kana_icons/icon_k_ya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_RA",
+          "file": "images/kana_icons/icon_k_ra.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_WA",
+          "file": "images/kana_icons/icon_k_wa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "ICON_K_COMBO",
+          "file": "images/kana_icons/icon_k_combo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_A",
+          "file": "images/hiragana/h_a.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_I",
+          "file": "images/hiragana/h_i.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_U",
+          "file": "images/hiragana/h_u.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_E",
+          "file": "images/hiragana/h_e.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_O",
+          "file": "images/hiragana/h_o.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KA",
+          "file": "images/hiragana/h_ka.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KI",
+          "file": "images/hiragana/h_ki.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KU",
+          "file": "images/hiragana/h_ku.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KE",
+          "file": "images/hiragana/h_ke.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KO",
+          "file": "images/hiragana/h_ko.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GA",
+          "file": "images/hiragana/h_ga.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GI",
+          "file": "images/hiragana/h_gi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GU",
+          "file": "images/hiragana/h_gu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GE",
+          "file": "images/hiragana/h_ge.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GO",
+          "file": "images/hiragana/h_go.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SA",
+          "file": "images/hiragana/h_sa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SHI",
+          "file": "images/hiragana/h_shi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SU",
+          "file": "images/hiragana/h_su.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SE",
+          "file": "images/hiragana/h_se.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SO",
+          "file": "images/hiragana/h_so.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_ZA",
+          "file": "images/hiragana/h_za.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_JI1",
+          "file": "images/hiragana/h_ji1.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_ZU",
+          "file": "images/hiragana/h_zu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_ZE",
+          "file": "images/hiragana/h_ze.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_ZO",
+          "file": "images/hiragana/h_zo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_TA",
+          "file": "images/hiragana/h_ta.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_CHI",
+          "file": "images/hiragana/h_chi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_TSU",
+          "file": "images/hiragana/h_tsu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_TE",
+          "file": "images/hiragana/h_te.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_TO",
+          "file": "images/hiragana/h_to.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_DA",
+          "file": "images/hiragana/h_da.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_JI2",
+          "file": "images/hiragana/h_ji2.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_DZU",
+          "file": "images/hiragana/h_dzu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_DE",
+          "file": "images/hiragana/h_de.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_DO",
+          "file": "images/hiragana/h_do.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NA",
+          "file": "images/hiragana/h_na.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NI",
+          "file": "images/hiragana/h_ni.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NU",
+          "file": "images/hiragana/h_nu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NE",
+          "file": "images/hiragana/h_ne.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NO",
+          "file": "images/hiragana/h_no.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HA",
+          "file": "images/hiragana/h_ha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HI",
+          "file": "images/hiragana/h_hi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_FU",
+          "file": "images/hiragana/h_fu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HE",
+          "file": "images/hiragana/h_he.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HO",
+          "file": "images/hiragana/h_ho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BA",
+          "file": "images/hiragana/h_ba.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BI",
+          "file": "images/hiragana/h_bi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BU",
+          "file": "images/hiragana/h_bu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BE",
+          "file": "images/hiragana/h_be.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BO",
+          "file": "images/hiragana/h_bo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PA",
+          "file": "images/hiragana/h_pa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PI",
+          "file": "images/hiragana/h_pi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PU",
+          "file": "images/hiragana/h_pu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PE",
+          "file": "images/hiragana/h_pe.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PO",
+          "file": "images/hiragana/h_po.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MA",
+          "file": "images/hiragana/h_ma.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MI",
+          "file": "images/hiragana/h_mi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MU",
+          "file": "images/hiragana/h_mu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_ME",
+          "file": "images/hiragana/h_me.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MO",
+          "file": "images/hiragana/h_mo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_YA",
+          "file": "images/hiragana/h_ya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_YU",
+          "file": "images/hiragana/h_yu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_YO",
+          "file": "images/hiragana/h_yo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RA",
+          "file": "images/hiragana/h_ra.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RI",
+          "file": "images/hiragana/h_ri.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RU",
+          "file": "images/hiragana/h_ru.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RE",
+          "file": "images/hiragana/h_re.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RO",
+          "file": "images/hiragana/h_ro.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_WA",
+          "file": "images/hiragana/h_wa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_WO",
+          "file": "images/hiragana/h_wo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_N",
+          "file": "images/hiragana/h_n.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KYA",
+          "file": "images/hiragana/h_kya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KYU",
+          "file": "images/hiragana/h_kyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_KYO",
+          "file": "images/hiragana/h_kyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GYA",
+          "file": "images/hiragana/h_gya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GYU",
+          "file": "images/hiragana/h_gyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_GYO",
+          "file": "images/hiragana/h_gyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SHA",
+          "file": "images/hiragana/h_sha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SHU",
+          "file": "images/hiragana/h_shu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_SHO",
+          "file": "images/hiragana/h_sho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_JA",
+          "file": "images/hiragana/h_ja.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_JU",
+          "file": "images/hiragana/h_ju.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_JO",
+          "file": "images/hiragana/h_jo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_CHA",
+          "file": "images/hiragana/h_cha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_CHU",
+          "file": "images/hiragana/h_chu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_CHO",
+          "file": "images/hiragana/h_cho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NYA",
+          "file": "images/hiragana/h_nya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NYU",
+          "file": "images/hiragana/h_nyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_NYO",
+          "file": "images/hiragana/h_nyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HYA",
+          "file": "images/hiragana/h_hya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HYU",
+          "file": "images/hiragana/h_hyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_HYO",
+          "file": "images/hiragana/h_hyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BYA",
+          "file": "images/hiragana/h_bya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BYU",
+          "file": "images/hiragana/h_byu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_BYO",
+          "file": "images/hiragana/h_byo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PYA",
+          "file": "images/hiragana/h_pya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PYU",
+          "file": "images/hiragana/h_pyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_PYO",
+          "file": "images/hiragana/h_pyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MYA",
+          "file": "images/hiragana/h_mya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MYU",
+          "file": "images/hiragana/h_myu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_MYO",
+          "file": "images/hiragana/h_myo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RYA",
+          "file": "images/hiragana/h_rya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RYU",
+          "file": "images/hiragana/h_ryu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "H_RYO",
+          "file": "images/hiragana/h_ryo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_A",
+          "file": "images/katakana/k_a.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_I",
+          "file": "images/katakana/k_i.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_U",
+          "file": "images/katakana/k_u.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_E",
+          "file": "images/katakana/k_e.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_O",
+          "file": "images/katakana/k_o.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KA",
+          "file": "images/katakana/k_ka.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KI",
+          "file": "images/katakana/k_ki.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KU",
+          "file": "images/katakana/k_ku.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KE",
+          "file": "images/katakana/k_ke.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KO",
+          "file": "images/katakana/k_ko.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GA",
+          "file": "images/katakana/k_ga.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GI",
+          "file": "images/katakana/k_gi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GU",
+          "file": "images/katakana/k_gu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GE",
+          "file": "images/katakana/k_ge.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GO",
+          "file": "images/katakana/k_go.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SA",
+          "file": "images/katakana/k_sa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SHI",
+          "file": "images/katakana/k_shi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SU",
+          "file": "images/katakana/k_su.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SE",
+          "file": "images/katakana/k_se.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SO",
+          "file": "images/katakana/k_so.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_ZA",
+          "file": "images/katakana/k_za.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_JI1",
+          "file": "images/katakana/k_ji1.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_ZU",
+          "file": "images/katakana/k_zu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_ZE",
+          "file": "images/katakana/k_ze.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_ZO",
+          "file": "images/katakana/k_zo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_TA",
+          "file": "images/katakana/k_ta.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_CHI",
+          "file": "images/katakana/k_chi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_TSU",
+          "file": "images/katakana/k_tsu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_TE",
+          "file": "images/katakana/k_te.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_TO",
+          "file": "images/katakana/k_to.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_DA",
+          "file": "images/katakana/k_da.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_JI2",
+          "file": "images/katakana/k_ji2.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_DZU",
+          "file": "images/katakana/k_dzu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_DE",
+          "file": "images/katakana/k_de.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_DO",
+          "file": "images/katakana/k_do.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NA",
+          "file": "images/katakana/k_na.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NI",
+          "file": "images/katakana/k_ni.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NU",
+          "file": "images/katakana/k_nu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NE",
+          "file": "images/katakana/k_ne.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NO",
+          "file": "images/katakana/k_no.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HA",
+          "file": "images/katakana/k_ha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HI",
+          "file": "images/katakana/k_hi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_FU",
+          "file": "images/katakana/k_fu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HE",
+          "file": "images/hiragana/h_he.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HO",
+          "file": "images/katakana/k_ho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BA",
+          "file": "images/katakana/k_ba.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BI",
+          "file": "images/katakana/k_bi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BU",
+          "file": "images/katakana/k_bu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BE",
+          "file": "images/hiragana/h_be.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BO",
+          "file": "images/katakana/k_bo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PA",
+          "file": "images/katakana/k_pa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PI",
+          "file": "images/katakana/k_pi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PU",
+          "file": "images/katakana/k_pu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PE",
+          "file": "images/hiragana/h_pe.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PO",
+          "file": "images/katakana/k_po.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MA",
+          "file": "images/katakana/k_ma.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MI",
+          "file": "images/katakana/k_mi.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MU",
+          "file": "images/katakana/k_mu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_ME",
+          "file": "images/katakana/k_me.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MO",
+          "file": "images/katakana/k_mo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_YA",
+          "file": "images/katakana/k_ya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_YU",
+          "file": "images/katakana/k_yu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_YO",
+          "file": "images/katakana/k_yo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RA",
+          "file": "images/katakana/k_ra.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RI",
+          "file": "images/katakana/k_ri.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RU",
+          "file": "images/katakana/k_ru.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RE",
+          "file": "images/katakana/k_re.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RO",
+          "file": "images/katakana/k_ro.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_WA",
+          "file": "images/katakana/k_wa.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_WO",
+          "file": "images/katakana/k_wo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_N",
+          "file": "images/katakana/k_n.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KYA",
+          "file": "images/katakana/k_kya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KYU",
+          "file": "images/katakana/k_kyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_KYO",
+          "file": "images/katakana/k_kyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GYA",
+          "file": "images/katakana/k_gya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GYU",
+          "file": "images/katakana/k_gyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_GYO",
+          "file": "images/katakana/k_gyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SHA",
+          "file": "images/katakana/k_sha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SHU",
+          "file": "images/katakana/k_shu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_SHO",
+          "file": "images/katakana/k_sho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_JA",
+          "file": "images/katakana/k_ja.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_JU",
+          "file": "images/katakana/k_ju.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_JO",
+          "file": "images/katakana/k_jo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_CHA",
+          "file": "images/katakana/k_cha.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_CHU",
+          "file": "images/katakana/k_chu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_CHO",
+          "file": "images/katakana/k_cho.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NYA",
+          "file": "images/katakana/k_nya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NYU",
+          "file": "images/katakana/k_nyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_NYO",
+          "file": "images/katakana/k_nyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HYA",
+          "file": "images/katakana/k_hya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HYU",
+          "file": "images/katakana/k_hyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_HYO",
+          "file": "images/katakana/k_hyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BYA",
+          "file": "images/katakana/k_bya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BYU",
+          "file": "images/katakana/k_byu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_BYO",
+          "file": "images/katakana/k_byo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PYA",
+          "file": "images/katakana/k_pya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PYU",
+          "file": "images/katakana/k_pyu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_PYO",
+          "file": "images/katakana/k_pyo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MYA",
+          "file": "images/katakana/k_mya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MYU",
+          "file": "images/katakana/k_myu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_MYO",
+          "file": "images/katakana/k_myo.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RYA",
+          "file": "images/katakana/k_rya.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RYU",
+          "file": "images/katakana/k_ryu.png",
+          "spaceOptimization": "storage"
+        },
+        {
+          "type": "bitmap",
+          "name": "K_RYO",
+          "file": "images/katakana/k_ryo.png",
+          "spaceOptimization": "storage"
+        }
+      ]
+    }
+  }
+}
