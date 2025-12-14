@@ -108,12 +108,20 @@ static void window_load(Window *window)
     layer_add_child(window_layer, bitmap_layer_get_layer(s_kana_layer));
 
     // Text
-    const GEdgeInsets text_insets = {.top = 105, .right = 0, .left = 0};
+    #if PBL_DISPLAY_HEIGHT == 228 
+        const GEdgeInsets text_insets = {.top = 124, .right = 0, .left = 0};
+    #else
+        const GEdgeInsets text_insets = {.top = 100, .right = 0, .left = 0};
+    #endif
     s_text_layer = text_layer_create(grect_inset(bounds, text_insets));
     text_layer_set_text(s_text_layer, current_deck.flashcards[0].sound);
     text_layer_set_background_color(s_text_layer, GColorClear);
     text_layer_set_text_alignment(s_text_layer, GTextAlignmentCenter);
-    text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+    #else
+        text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_text_layer));
 
     // End Card
@@ -125,26 +133,38 @@ static void window_load(Window *window)
     text_layer_set_font(s_end_header_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
     layer_add_child(window_layer, text_layer_get_layer(s_end_header_layer));
     layer_set_hidden(text_layer_get_layer(s_end_header_layer), true);
-
-    const GEdgeInsets end_text_insets = {.top = 70};
+    
+    #if PBL_DISPLAY_HEIGHT == 228 
+        const GEdgeInsets end_text_insets = {.top = 50};
+    #else
+        const GEdgeInsets end_text_insets = {.top = 70};
+    #endif
     s_end_text_layer = text_layer_create(grect_inset(bounds, end_text_insets));
     text_layer_set_text(s_end_text_layer, "Up: Restart Deck\nCenter: New Deck\nDown: Main Menu");
     text_layer_set_background_color(s_end_text_layer, GColorClear);
     text_layer_set_text_alignment(s_end_text_layer, GTextAlignmentCenter);
-    text_layer_set_font(s_end_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_end_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #else
+        text_layer_set_font(s_end_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_end_text_layer));
     layer_set_hidden(text_layer_get_layer(s_end_text_layer), true);
 
-// Card Number
-#if defined(PBL_RECT)
-    const GEdgeInsets number_insets = {.top = 1, .left = 5};
-#elif defined(PBL_ROUND)
-    const GEdgeInsets number_insets = {.top = 5, .right = 0};
-#endif
+    // Card Number
+    #if defined(PBL_RECT)
+        const GEdgeInsets number_insets = {.top = 1, .left = 5};
+    #elif defined(PBL_ROUND)
+        const GEdgeInsets number_insets = {.top = 5, .right = 0};
+    #endif
     s_number_layer = text_layer_create(grect_inset(bounds, number_insets));
     text_layer_set_background_color(s_number_layer, GColorClear);
     text_layer_set_text_alignment(s_number_layer, PBL_IF_RECT_ELSE(GTextAlignmentLeft, GTextAlignmentCenter));
-    text_layer_set_font(s_number_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_number_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #else
+        text_layer_set_font(s_number_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_number_layer));
 
     // Action Bar
@@ -246,7 +266,7 @@ void create_new_deck()
     }
 
     // Set array
-    randomize(selected_kana_array_original, selected_kana_total);
+    //randomize(selected_kana_array_original, selected_kana_total);
 
     // Create Deck
     current_deck.flashcards = (flashcard_struct *)malloc(sizeof(flashcard_struct) * card_num);

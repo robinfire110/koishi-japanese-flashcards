@@ -42,17 +42,25 @@ static void window_load(Window *window)
     layer_add_child(window_layer, s_background_layer);
 
     s_header_layer = text_layer_create(GRect(HELP_WINDOW_MARGIN, bounds.size.h + HELP_WINDOW_MARGIN, bounds.size.w - (2 * HELP_WINDOW_MARGIN), bounds.size.h));
-    text_layer_set_text(s_header_layer, "Help");
+    text_layer_set_text(s_header_layer, "About Koishi");
     text_layer_set_background_color(s_header_layer, GColorClear);
     text_layer_set_text_alignment(s_header_layer, PBL_IF_ROUND_ELSE(GTextAlignmentCenter, GTextAlignmentLeft));
-    text_layer_set_font(s_header_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_header_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+    #else
+        text_layer_set_font(s_header_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_header_layer));
 
     s_text_layer = text_layer_create(GRect(HELP_WINDOW_MARGIN + HELP_HEADER_OFFSET, bounds.size.h + HELP_WINDOW_MARGIN, bounds.size.w - (2 * HELP_WINDOW_MARGIN), bounds.size.h));
-    text_layer_set_text(s_text_layer, "Start Deck: Creates new deck with current settings. Navigate with up/down and use center button to flip card.\n\nDeck Settings: Customize number of cards and which Kana will appear in deck.");
+    text_layer_set_text(s_text_layer, "Start Deck - Create new deck with current settings. Navigate with up/down, use center button to flip card.\n\nDeck Settings - Customize deck kana and length.\n\nCreated by robinfire110");
     text_layer_set_background_color(s_text_layer, GColorClear);
     text_layer_set_text_alignment(s_text_layer, PBL_IF_ROUND_ELSE(GTextAlignmentCenter, GTextAlignmentLeft));
-    text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
+    #else
+        text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_text_layer));
 }
 

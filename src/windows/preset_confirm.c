@@ -184,18 +184,25 @@ static void window_load(Window *window)
     bitmap_layer_set_compositing_mode(s_icon_layer, GCompOpSet);
     layer_add_child(window_layer, bitmap_layer_get_layer(s_icon_layer));
 
-    #if defined(PBL_RECT)
-        const GEdgeInsets label_insets = {.top = 112, .right = ACTION_BAR_WIDTH, .left = 0};
-    #elif defined(PBL_ROUND)
+    #if PBL_DISPLAY_HEIGHT == 228 
+        const GEdgeInsets label_insets = {.top = 130, .right = ACTION_BAR_WIDTH, .left = 0};
+    #elif PBL_DISPLAY_HEIGHT == 180 
         const GEdgeInsets label_insets = {.top = 112, .right = ACTION_BAR_WIDTH / 2, .left = 0};
+    #else
+        const GEdgeInsets label_insets = {.top = 112, .right = ACTION_BAR_WIDTH, .left = 0};
     #endif
+
     s_label_layer = text_layer_create(grect_inset(bounds, label_insets));
     static char s_buff[30];
     snprintf(s_buff, sizeof(s_buff), "Apply preset\n%s?", get_name(preset_num, false));
     text_layer_set_text(s_label_layer, s_buff);
     text_layer_set_background_color(s_label_layer, GColorClear);
     text_layer_set_text_alignment(s_label_layer, GTextAlignmentCenter);
-    text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #else
+        text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_label_layer));
 
     s_tick_bitmap = gbitmap_create_with_resource(RESOURCE_ID_TICK);

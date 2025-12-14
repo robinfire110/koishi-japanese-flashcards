@@ -1,4 +1,5 @@
 #include "warning.h"
+#include "c/sizes.h"
 
 static Window *s_main_window;
 static TextLayer *s_label_layer;
@@ -64,7 +65,11 @@ static void window_load(Window *window)
     text_layer_set_text(s_label_layer, "No Kana Selected!\nSelect Kana in Deck Settings.");
     text_layer_set_background_color(s_label_layer, GColorClear);
     text_layer_set_text_alignment(s_label_layer, PBL_IF_ROUND_ELSE(GTextAlignmentCenter, GTextAlignmentLeft));
-    text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #if PBL_DISPLAY_HEIGHT == 228 
+        text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+    #else
+        text_layer_set_font(s_label_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    #endif
     layer_add_child(window_layer, text_layer_get_layer(s_label_layer));
 }
 

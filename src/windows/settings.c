@@ -2,6 +2,7 @@
 #include "card_num.h"
 #include "kana.h"
 #include "presets.h"
+#include "c/sizes.h"
 
 static Window *s_main_window;
 static MenuLayer *s_menu_layer;
@@ -14,12 +15,22 @@ static uint16_t get_num_rows_callback(MenuLayer *menu_layer, uint16_t section_in
 
 static int16_t menu_get_header_height_callback(MenuLayer *menu_layer, uint16_t section_index, void *data)
 {
-  return MENU_CELL_BASIC_HEADER_HEIGHT;
+  #if PBL_DISPLAY_HEIGHT == 228 
+    return MENU_CELL_BASIC_HEADER_HEIGHT + HEADER_HEIGHT_EMERY_ADD;
+  #elif PBL_DISPLAY_HEIGHT == 180 
+    return MENU_CELL_BASIC_HEADER_HEIGHT;
+  #else
+    return MENU_CELL_BASIC_HEADER_HEIGHT;
+  #endif
 }
 
 static void menu_draw_header_callback(GContext *ctx, const Layer *cell_layer, uint16_t section_index, void *data)
 {
-  menu_cell_basic_header_draw(ctx, cell_layer, "Settings");
+  #if PBL_DISPLAY_HEIGHT == 228 
+    menu_cell_title_draw(ctx, cell_layer, "Settings");
+  #else
+    menu_cell_basic_header_draw(ctx, cell_layer, "Settings");
+  #endif
 }
 
 static void draw_row_callback(GContext *ctx, const Layer *cell_layer, MenuIndex *cell_index, void *context)
@@ -46,7 +57,13 @@ static void draw_row_callback(GContext *ctx, const Layer *cell_layer, MenuIndex 
 
 static int16_t get_cell_height_callback(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *context)
 {
-  return PBL_IF_ROUND_ELSE(menu_layer_is_index_selected(menu_layer, cell_index) ? MENU_CELL_ROUND_FOCUSED_SHORT_CELL_HEIGHT : MENU_CELL_ROUND_UNFOCUSED_TALL_CELL_HEIGHT, CHECKBOX_WINDOW_CELL_HEIGHT);
+  #if PBL_DISPLAY_HEIGHT == 228 
+    return WINDOW_CELL_HEIGHT_EMERY;
+  #elif PBL_DISPLAY_HEIGHT == 180 
+    return menu_layer_is_index_selected(menu_layer, cell_index) ? MENU_CELL_ROUND_FOCUSED_SHORT_CELL_HEIGHT : MENU_CELL_ROUND_UNFOCUSED_TALL_CELL_HEIGHT;
+  #else
+    return WINDOW_CELL_HEIGHT;
+  #endif
 }
 
 static void select_callback(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *context)
