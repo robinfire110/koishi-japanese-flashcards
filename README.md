@@ -1,8 +1,9 @@
 # koishi-japanese-flashcards
 Japanese Hiragana & Katakana Flashcards for Pebble Watch
 
-# Rebble App Store Link
-https://apps.rebble.io/en_US/application/64177b1e419fd9053e31a7b5
+# App Store Link
+Rebble - https://apps.rebble.io/en_US/application/64177b1e419fd9053e31a7b5
+RePebble - https://apps.repebble.com/en_US/application/64177b1e419fd9053e31a7b5
 
 # Description
 This watchapp gives you a full set of Hiragana and Katakana flashcards at your wrist. Study your kana recognition anytime, anywhere!
