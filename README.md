@@ -3,6 +3,7 @@ Japanese Hiragana & Katakana Flashcards for Pebble Watch
 
 # App Store Link
 Rebble - https://apps.rebble.io/en_US/application/64177b1e419fd9053e31a7b5
+
 RePebble - https://apps.repebble.com/en_US/application/64177b1e419fd9053e31a7b5
 
 # Description
